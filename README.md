@@ -1,6 +1,6 @@
 # Testing-Inverse-Cramer
 ## Introduction
-Lately, a meme known as "Inverse Cramer" has been gaining awareness online, with Elon Musk even referencing it on twitter/X. The "Inverse Cramer Fund" was even purported to be outperforming the "Nancy Pelosi Husband Fund" for a brief period of time. Put simply, the "Inverse Cramer" doctrine is: Whatever Cramer says, do the opposite! Consequently, I decided to look into whether the "Inverse Cramer" effect could really inform a viable trading or investing strategy. 
+Lately, an investing concept known as "Inverse Cramer" has been attracting attention. Its namesake, Jim Cramer, has been an investment analyst and host of the show "Mad Money" on CNBC for decades. The "Inverse Cramer" strategy even led to a fund that even purported to outperform the "Nancy Pelosi Husband Tracker" for a brief period of time. Put simply, the "Inverse Cramer" doctrine is: Whatever Cramer says, do the opposite! Consequently, I decided to look into whether the "Inverse Cramer" effect could really inform a viable trading or investing strategy. 
 
 ## Dataset
 - **Source**: Data acquired from Kaggle, titled Jim Cramer's Picks 2016-2022 (https://www.kaggle.com/datasets/diamondprox/jimcramer). I also downloaded the most up to date version of current prices of S&P 500, also via Kaggle (https://www.kaggle.com/datasets/andrewmvd/sp-500-stocks)
@@ -20,7 +20,7 @@ Second, I opened the data in an Excel worksheet and used the STOCKHISTORY functi
 
 I then loaded the csv file into Jupyter Notebook as a pandas DataFrame. I first dropped two empty columns from the DataFrame, and formatted the '#VALUE!' and '#N/A' strings as np.nan values. I then attempted to iterate through these rows specifically, fetching data from Yahoofinance and inputing the 'Close' price on the date of Cramer's recommendation into the column "HistoricalPrice". I then calculated new columns "Time Since Recommendation" (in days), "Years Since Recommendation" (in yields), "Total Yield" (in %) and "Annual Yield" (in %). 
 
-I then eliminated all rows in the DataFrame in which Annual Yield was more than 500%. Unfortunately it's not a perfect solution, but I think it will primarily eliminate the most egregious cases of errors caused by flawed data (what I believe mostly originates from incorrect currencies being used for historical stock prices in Excel's STOCKHISTORY function). In any case, the size of the data should ensure it's robustness, but I will also prefer metrics that are more robust to skewness (median rather than mean, for example) in the analysis. 
+I then eliminated all rows in the DataFrame in which Annual Yield was more than 500%. Unfortunately it's not a perfect solution, but I think it will primarily eliminate the most egregious cases of errors caused by flawed data (what I believe mostly originates from incorrect currencies being used for historical stock prices in Excel's STOCKHISTORY function). In any case, the size of the data should ensure its robustness, but I will also prefer metrics that are more robust to skewness (median rather than mean, for example) in the analysis. 
 
 With all that done, the dataset is cleaned and prepared with the information required for rigorous analysis and visualization, which I did in both Jupyter Notebook and Power BI. 
 
@@ -43,7 +43,7 @@ Like in the Financial Services Sector, Cramer's Buy picks in the Real Estate sec
 
 ![download](https://github.com/user-attachments/assets/c7623a1b-49ec-4916-9429-e9402f2dc66e)
 
-So far this exploratory analysis suggests that investing Cramer's recommendations may require different heuristics depending on the sector in which the recommendation was made. For example, buying tech companies that Cramer was bullish on, and buying Financial Companies that Cramer was bearish on, would have been a hugely lucrative investment strategy. 
+So far this exploratory analysis suggests that investing Cramer's recommendations may require different heuristics depending on the sector in which the recommendation was made. For example, buying tech companies that Cramer was bullish on, and buying Financial companies that Cramer was bearish on, would have been a hugely lucrative investment strategy. 
 
 **Further Analysis Using Power BI:**
 
@@ -62,7 +62,7 @@ Cramer's "Buy"s outperform his "Sell"s in Technology, Basic Materials, Communica
 
 What have been Cramer's best and worst calls overall? The figures below show Cramer's best performing Buy and Sell recommendations. Cramer consistently recommended Nvidia over the years, which is his best performing "Buy" recommendation on average. His worst "Buy" suggestion was Este Lauder, which provided an annual yield of nearly -40% on average from the dates of Cramer's "Buy" suggestions for the stock. 
 
-Cramer's sell recommendations on Targa Resources, Tesla, Builder FirstSource, and Vistra Energy are very bad suggestions in hindsight, as all of those stocks have outperformed all but one of Cramer's Buy picks. To be fair, some stocks like Tesla that Cramer has recommended selling at times, he's also recommended buying at other times.
+Cramer's sell recommendations on Targa Resources, Tesla, Builder FirstSource, and Vistra Energy were very bad suggestions in hindsight, as all of those stocks have outperformed all but one of Cramer's Buy picks. To be fair, some stocks like Tesla that Cramer has recommended selling at times, he's also recommended buying at other times.
 
 ![image](https://github.com/user-attachments/assets/bddd7596-6825-4a5d-8de3-cdf92bf8969b)
 
